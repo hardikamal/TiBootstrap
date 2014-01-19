@@ -1,0 +1,1 @@
+module.exports={"dependencies":{"f.Stream":"1.0","f.StreamItem":"1.0","f.Menu":"1.0","f.ContentScreen":"1.0","com.svobik.InfiniteList":"0.2","f.MenuButton":"1.0"}};

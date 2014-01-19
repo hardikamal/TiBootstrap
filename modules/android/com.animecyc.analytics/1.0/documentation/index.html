@@ -1,0 +1,207 @@
+<h1>TitaniumAnalytics Module</h1>
+<p>A full implementation of the Google Analytics SDK. As of this writing the SDK is at v2.0b4 and is not compatible with the legacy application analytics profiles. This implementation supports multiple trackers at the same time so long as all trackers adhere to Google Analytics quotas and limitations on aggregate tracking.</p>
+<h2>Usage</h2>
+<pre><code>var Analytics = require("com.animecyc.analytics"),
+    tracker = Analytics.getTracker('UA-XXXXXXX-X');
+
+Analytics.setDebug(true);
+tracker.trackScreen('Home');
+</code></pre>
+<h2>Module Reference</h2>
+<h3>Analytics.getTracker(uaCode);</h3>
+<p>Get an instance of a tracker and creates it if it does not exist. Calling <code>getTracker</code> on the same UA code will return a reference to the tracker.</p>
+<ul>
+<li>uaCode (String):<ul>
+<li>The tracker identifier from a compatible google analytics profile.</li>
+</ul>
+</li>
+</ul>
+<h3>Analytics.getDefaultTracker();</h3>
+<p>Get the default (if not set the first) tracker reference.</p>
+<p><em>This method takes no paramters.</em></p>
+<h3>Analytics.createTransaction(transactionId, transactionOptions);</h3>
+<p>Create a transaction (ECommerce) to be sent via a tracker.</p>
+<ul>
+<li>transactionId (String):<ul>
+<li>A unique string identifiing the transaction.</li>
+</ul>
+</li>
+<li>transactionOptions (Object):<ul>
+<li>An object containing the following:<ul>
+<li>affiliation (String)</li>
+<li>tax (Float)</li>
+<li>shipping (Float)</li>
+<li>revenue (Float)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Analytics.setDebug(debug);</h3>
+<p>Set the debug flag, will result in messages being logged to the console. Ensure you don't leave this enabled for production.</p>
+<ul>
+<li>debug (Boolean):<ul>
+<li>Debug status flag</li>
+</ul>
+</li>
+</ul>
+<h3>Analytics.setDispatchInterval(dispatchInterval);</h3>
+<p>Set the dispatch interval; All hits are queued and will be sent on an interval firing on the interval set by this method. By default queues are dispatched every 120 seconds.</p>
+<ul>
+<li>dispatchInterval (Float):<ul>
+<li>Interval at which hits are dispatched automatically.</li>
+</ul>
+</li>
+</ul>
+<h3>Analytics.setTrackUncaughtExceptions(trackUncaught);</h3>
+<p>Track exceptions not caught from the application. Exceptions caught by means of this flag being set to <code>true</code> are always reported as fatal.</p>
+<ul>
+<li>trackUncaught (Boolean):<ul>
+<li>Boolean flag to catch uncaught exceptions.</li>
+</ul>
+</li>
+</ul>
+<h3>Analytics.setOptOut(optOut);</h3>
+<p>If set to true, all trackers will cease to dispatch anything tracked.</p>
+<ul>
+<li>optOut (Boolean):<ul>
+<li>Boolean flag to globally opt-out of all analytics tracking.</li>
+</ul>
+</li>
+</ul>
+<h2>Tracker Reference</h2>
+<h3>Tracker.trackScreen(screenName);</h3>
+<p>Track an individual screen, optionally send a screen name with the hit.</p>
+<ul>
+<li>screenName (String):<ul>
+<li>String containing the name of the screen being hit.</li>
+</ul>
+</li>
+</ul>
+<h3>Tracker.trackEvent(eventOptions);</h3>
+<ul>
+<li>eventOptions (Object):<ul>
+<li>An object containing the following:<ul>
+<li>category (String)</li>
+<li>action (String)</li>
+<li>label (String)</li>
+<li>value (Float)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Tracker.trackException(exceptionOptions);</h3>
+<ul>
+<li>exceptionOptions (Object):<ul>
+<li>An object containing the following:<ul>
+<li>fatal (Boolean)</li>
+<li>description (String)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Tracker.trackSocial(socialOptions);</h3>
+<ul>
+<li>socialOptions (Object):<ul>
+<li>An object containing the following:<ul>
+<li>social (String)</li>
+<li>action (String)</li>
+<li>target (String)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Tracker.trackTime(timingOptions);</h3>
+<ul>
+<li>timingOptions (Object):<ul>
+<li>An object containing the following:<ul>
+<li>category (String)</li>
+<li>interval (Integer)</li>
+<li>name (String)</li>
+<li>label (String)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Tracker.setAnonymize(anonymize);</h3>
+<ul>
+<li>anonymize (Boolean):<ul>
+<li>If set to <code>true</code> the tracker will anonymize the users session. Typically this will scramble the last octets of a users IP address.</li>
+</ul>
+</li>
+</ul>
+<h3>Tracker.setUseHttps(useHttps);</h3>
+<ul>
+<li>useHttps (Boolean):<ul>
+<li>If set to <code>true</code> hits will be sent over the HTTPS protocol. This defaults to <code>true</code>.</li>
+</ul>
+</li>
+</ul>
+<h3>Tracker.setSampleRate(sampleRate);</h3>
+<ul>
+<li>sampleRate (Float):<ul>
+<li>This will limit the number of hits sent to Google Analytics. It can range from <code>0</code> to <code>100</code>. This is useful if your application has a large number of users.</li>
+</ul>
+</li>
+</ul>
+<h3>Tracker.setSessionTimeout(sessionTimeout);</h3>
+<ul>
+<li>sessionTimeout (Integer):<ul>
+<li>An integer used to set the length of time a session will persist.</li>
+</ul>
+</li>
+</ul>
+<h3>Tracker.setCampaignUrl(campaignUrl);</h3>
+<ul>
+<li>campaignUrl (String):<ul>
+<li>A string containing the URL used in analytics campaigns.</li>
+</ul>
+</li>
+</ul>
+<h3>Tracker.setReferrerUrl(referrerUrl);</h3>
+<ul>
+<li>referrerUrl (String):<ul>
+<li>A string containing the URL used as a referrer, typically used in a campaign to track where people are coming from.</li>
+</ul>
+</li>
+</ul>
+<h2>Transaction Reference</h2>
+<h3>setTax(tax)</h3>
+<ul>
+<li>tax (Float):<ul>
+<li>The tax-rate for the transaction.</li>
+</ul>
+</li>
+</ul>
+<h3>setShipping(shipping)</h3>
+<ul>
+<li>shipping (Float):<ul>
+<li>The amount of shipping for the transaction.</li>
+</ul>
+</li>
+</ul>
+<h3>setRevenue(revenue)</h3>
+<ul>
+<li>revenue (Float):<ul>
+<li>The total revenue for the transaction. This must be updated manually as adding items will not automatically increment this value.</li>
+</ul>
+</li>
+</ul>
+<h3>addItem(itemOptions)</h3>
+<ul>
+<li>itemOptions (Object):<ul>
+<li>An object containing the following:<ul>
+<li>sku (String)</li>
+<li>name (String)</li>
+<li>category (String)</li>
+<li>price (Float)</li>
+<li>quantity (Integer)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>

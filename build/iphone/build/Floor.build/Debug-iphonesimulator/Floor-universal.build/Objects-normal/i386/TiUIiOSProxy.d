@@ -1,0 +1,60 @@
+dependencies: \
+  /Users/wienke/workspace/Floor/build/iphone/Classes/TiUIiOSProxy.m \
+  /Users/wienke/workspace/Floor/build/iphone/Classes/TiUIiOSProxy.h \
+  /Users/wienke/workspace/Floor/build/iphone/Classes/TiProxy.h \
+  /Users/wienke/workspace/Floor/build/iphone/Classes/TiBase.h \
+  /Users/wienke/workspace/Floor/build/iphone/Classes/TiThreading.h \
+  /Users/wienke/workspace/Floor/build/iphone/Classes/TiPublicAPI.h \
+  /Users/wienke/workspace/Floor/build/iphone/Classes/TiEvaluator.h \
+  /Users/wienke/workspace/Floor/build/iphone/Classes/KrollContext.h \
+  /Users/wienke/workspace/Floor/build/iphone/headers/TiCore/TiCore.h \
+  headers/TiCore/Ti.h headers/TiCore/TiBase.h \
+  headers/TiCore/TiContextRef.h headers/TiCore/TiObjectRef.h \
+  headers/TiCore/TiValueRef.h headers/TiCore/WebKitAvailability.h \
+  headers/TiCore/TiStringRef.h headers/TiCore/TiStringRefCF.h \
+  /Users/wienke/workspace/Floor/build/iphone/headers/TiCore/TiContextRefPrivate.h \
+  /Users/wienke/workspace/Floor/build/iphone/Classes/KrollCallback.h \
+  /Users/wienke/workspace/Floor/build/iphone/Classes/KrollObject.h \
+  /Users/wienke/workspace/Floor/build/iphone/Classes/TiBindingRunLoop.h \
+  /Users/wienke/workspace/Floor/build/iphone/Classes/TiUIiOSAdViewProxy.h \
+  /Users/wienke/workspace/Floor/build/iphone/Classes/TiUIViewProxy.h \
+  /Users/wienke/workspace/Floor/build/iphone/Classes/TiViewProxy.h \
+  /Users/wienke/workspace/Floor/build/iphone/Classes/TiUIView.h \
+  /Users/wienke/workspace/Floor/build/iphone/Classes/TiAnimation.h \
+  /Users/wienke/workspace/Floor/build/iphone/Classes/TiPoint.h \
+  /Users/wienke/workspace/Floor/build/iphone/Classes/TiDimension.h \
+  /Users/wienke/workspace/Floor/build/iphone/Classes/TiColor.h \
+  /Users/wienke/workspace/Floor/build/iphone/Classes/ListenerEntry.h \
+  /Users/wienke/workspace/Floor/build/iphone/Classes/TiModule.h \
+  /Users/wienke/workspace/Floor/build/iphone/Classes/TiUtils.h \
+  /Users/wienke/workspace/Floor/build/iphone/Classes/WebFont.h \
+  /Users/wienke/workspace/Floor/build/iphone/Classes/TiFile.h \
+  /Users/wienke/workspace/Floor/build/iphone/Classes/TiBuffer.h \
+  /Users/wienke/workspace/Floor/build/iphone/Classes/TiBlob.h \
+  /Users/wienke/workspace/Floor/build/iphone/Classes/LayoutConstraint.h \
+  /Users/wienke/workspace/Floor/build/iphone/Classes/TiGradient.h \
+  /Users/wienke/workspace/Floor/build/iphone/Classes/TiRect.h \
+  /Users/wienke/workspace/Floor/build/iphone/Classes/TiViewTemplate.h \
+  /Users/wienke/workspace/Floor/build/iphone/Classes/Webcolor.h \
+  /Users/wienke/workspace/Floor/build/iphone/Classes/TiUIiOSTransitionAnimationProxy.h \
+  /Users/wienke/workspace/Floor/build/iphone/Classes/TiUIiOSAttributedStringProxy.h \
+  /Users/wienke/workspace/Floor/build/iphone/Classes/Ti3DMatrix.h \
+  /Users/wienke/workspace/Floor/build/iphone/Classes/TiUIiOSCoverFlowViewProxy.h \
+  /Users/wienke/workspace/Floor/build/iphone/Classes/TiUIiOSToolbarProxy.h \
+  /Users/wienke/workspace/Floor/build/iphone/Classes/TiToolbar.h \
+  /Users/wienke/workspace/Floor/build/iphone/Classes/TiUIiOSTabbedBarProxy.h \
+  /Users/wienke/workspace/Floor/build/iphone/Classes/TiUIiOSDocumentViewerProxy.h \
+  /Users/wienke/workspace/Floor/build/iphone/Classes/TiUIiOSNavWindowProxy.h \
+  /Users/wienke/workspace/Floor/build/iphone/Classes/TiWindowProxy.h \
+  /Users/wienke/workspace/Floor/build/iphone/Classes/TiTab.h \
+  /Users/wienke/workspace/Floor/build/iphone/Classes/TiTabGroup.h \
+  /Users/wienke/workspace/Floor/build/iphone/Classes/TiViewController.h \
+  /Users/wienke/workspace/Floor/build/iphone/Classes/TiControllerProtocols.h \
+  /Users/wienke/workspace/Floor/build/iphone/Classes/TiAnimatorProxy.h \
+  /Users/wienke/workspace/Floor/build/iphone/Classes/TiSnapBehavior.h \
+  /Users/wienke/workspace/Floor/build/iphone/Classes/TiPushBehavior.h \
+  /Users/wienke/workspace/Floor/build/iphone/Classes/TiGravityBehavior.h \
+  /Users/wienke/workspace/Floor/build/iphone/Classes/TiAnchorAttachBehavior.h \
+  /Users/wienke/workspace/Floor/build/iphone/Classes/TiViewAttachBehavior.h \
+  /Users/wienke/workspace/Floor/build/iphone/Classes/TiCollisionBehavior.h \
+  /Users/wienke/workspace/Floor/build/iphone/Classes/TiDynamicItemBehavior.h

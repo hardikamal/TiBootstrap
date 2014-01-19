@@ -1,0 +1,17 @@
+// this is a generated file - DO NOT EDIT
+
+DK_NAPP_DRAWER_OTHER_LDFLAGS=$(inherited) -framework QuartzCore
+FACEBOOK_OTHER_LDFLAGS=$(inherited) -weak_framework AdSupport -weak_framework Accounts -weak_framework Social
+DK_NAPP_UI_OTHER_LDFLAGS=$(inherited) -framework QuartzCore -framework CoreText -framework CoreGraphics -framework Accelerate
+DK_NAPP_SOCIAL_OTHER_LDFLAGS_sdk_iphoneos6__=$(inherited) -weak_framework Social -weak_framework Accounts -weak_framework Twitter
+DK_NAPP_SOCIAL_OTHER_LDFLAGS_sdk_iphonesimulator6__=$(inherited) -weak_framework Social -weak_framework Accounts -weak_framework Twitter
+DK_NAPP_SOCIAL_OTHER_LDFLAGS_sdk_iphoneos7__=$(inherited) -weak_framework Social -weak_framework Accounts -weak_framework Twitter
+DK_NAPP_SOCIAL_OTHER_LDFLAGS_sdk_iphonesimulator7__=$(inherited) -weak_framework Social -weak_framework Accounts -weak_framework Twitter
+TI_STOREKIT_OTHER_LDFLAGS=$(inherited) -framework StoreKit -framework Security
+COM_ANIMECYC_ANIMATOR_OTHER_LDFLAGS=$(inherited) -framework Foundation -framework QuartzCore
+COM_ANIMECYC_ANALYTICS_OTHER_LDFLAGS=$(inherited) -framework Foundation -framework CoreData -framework SystemConfiguration
+OTHER_LDFLAGS=$(inherited) $(DK_NAPP_DRAWER_OTHER_LDFLAGS) $(FACEBOOK_OTHER_LDFLAGS) $(DK_NAPP_UI_OTHER_LDFLAGS) $(TI_STOREKIT_OTHER_LDFLAGS) $(COM_ANIMECYC_ANIMATOR_OTHER_LDFLAGS) $(COM_ANIMECYC_ANALYTICS_OTHER_LDFLAGS) 
+OTHER_LDFLAGS[sdk=iphoneos6*]=$(inherited) $(DK_NAPP_SOCIAL_OTHER_LDFLAGS_sdk_iphoneos6__) 
+OTHER_LDFLAGS[sdk=iphonesimulator6*]=$(inherited) $(DK_NAPP_SOCIAL_OTHER_LDFLAGS_sdk_iphonesimulator6__) 
+OTHER_LDFLAGS[sdk=iphoneos7*]=$(inherited) $(DK_NAPP_SOCIAL_OTHER_LDFLAGS_sdk_iphoneos7__) 
+OTHER_LDFLAGS[sdk=iphonesimulator7*]=$(inherited) $(DK_NAPP_SOCIAL_OTHER_LDFLAGS_sdk_iphonesimulator7__) 

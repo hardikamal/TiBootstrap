@@ -1,0 +1,18 @@
+#
+# this is your module manifest and used by Titanium
+# during compilation, packaging, distribution, etc.
+#
+version: 2013.05.15
+apiversion: 2
+description: Nakko AdBanner Module
+author: Frank Burgers
+license: All Rights Reserved
+copyright: Copyright (c) 2013 by Nakko Services b.v. Diemen NL
+
+
+# these should not be edited
+name: adbanner
+moduleid: com.nakko.adbanner
+guid: bb144cef-78d8-44fb-ba3e-e9f1dcc0003e
+platform: iphone
+minsdk: 2.1.4.GA

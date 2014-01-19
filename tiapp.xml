@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?><ti:app xmlns:ti="http://ti.appcelerator.org">
+	<id>nl.floor.app</id>
+	<name>Floor</name>
+	<version>1.0</version>
+	<publisher>WWG Holding B.V.</publisher>
+	<url>http://www.wappzapp.tv</url>
+	<description></description>
+	<copyright>WWG Holding B.V.</copyright>
+	<icon>appicon.png</icon>
+	<fullscreen>false</fullscreen>
+	<navbar-hidden>false</navbar-hidden>
+	<analytics>true</analytics>
+	<guid>296842e7-3016-47a2-9807-1832eaf3b035</guid>
+    <ios>
+        <min-ios-ver>6.0</min-ios-ver>
+        <plist>
+            <dict>
+                <key>UIViewControllerBasedStatusBarAppearance</key>
+                <true/>
+
+                <key>UISupportedInterfaceOrientations~iphone</key>
+                <array>
+                    <string>UIInterfaceOrientationPortrait</string>
+                </array>
+                <key>UISupportedInterfaceOrientations~ipad</key>
+                <array>
+                    <string>UIInterfaceOrientationPortrait</string>
+                </array>
+                <key>UIBackgroundModes</key>
+                <array>
+                    <string>audio</string>
+                </array>
+                <key>UIAppFonts</key>
+                <array>
+                    <string>fonts/terafik.ttf</string>
+                    <string>fonts/terafikb.ttf</string>
+                </array>
+            </dict>
+        </plist>
+    </ios>
+    <android xmlns:android="http://schemas.android.com/apk/res/android">
+        <!-- This tells us what Android API version to compile against -->
+        <manifest android:versionCode="1" android:versionName="3.0.3" >
+            <uses-sdk android:minSdkVersion="9" android:targetSdkVersion="19"/>
+            <!-- This tells the Marketplace and the system what versions of Android your app supports -->
+            <application android:debuggable="false" android:hardwareAccelerated="true" android:theme="@style/Theme.Wappaction" android:launchMode="singleTask">
+                <!-- android:name needs to match the generated AndroidManifest.xml in build/android/AndroidManifest.xml -->
+                <supports-screens android:anyDensity="true"
+                    android:largeScreens="true"
+                    android:normalScreens="true"
+                    android:smallScreens="true" android:xlargeScreens="true"/>
+
+                    <service android:name="com.activate.gcm.GCMIntentService"/>
+                    <receiver android:name="com.google.android.gcm.GCMBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+                    <!-- Start receiver on boot -->
+                    <intent-filter>
+                            <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                            <category android:name="android.intent.category.HOME"/>
+                        </intent-filter>
+                    <!-- Receive the actual message -->
+                    <intent-filter>
+                            <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                            <category android:name="com.snowciety.app"/>
+                        </intent-filter>
+                    <!-- Receive the registration id -->
+                    <intent-filter>
+                            <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                            <category android:name="com.snowciety.app"/>
+                        </intent-filter>
+                    </receiver>
+            </application>
+            <permission android:name="com.snowciety.app.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+            <uses-permission android:name="com.snowciety.app.permission.C2D_MESSAGE"/>
+            <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+            <uses-permission android:name="android.permission.WAKE_LOCK"/>
+            <uses-permission android:name="android.permission.VIBRATE"/>
+            <uses-permission android:name="android.permission.INTERNET"/>
+            <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+            <uses-permission android:name="android.permission.USE_CREDENTIALS"/>
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+        </manifest>
+    </android>
+    <modules>
+    <module platform="android">facebook</module>
+    <module platform="android" version="1.1.3">dk.napp.drawer</module>
+    <module platform="android">net.iamyellow.gcmjs</module>
+    <module platform="android">com.animecyc.analytics</module>
+    <module platform="android" >ti.admob</module>
+
+    <module platform="iphone" >dk.napp.drawer</module>
+    <module platform="iphone" >ti.admob</module>
+    <module platform="iphone" version="1.0.1">com.omorandi</module>
+    <module platform="iphone">facebook</module>
+    <module platform="iphone" version="1.2.2">dk.napp.ui</module>
+    <module platform="iphone" version="1.2.5">dk.napp.appearance</module>
+    <module platform="iphone" version="1.7.1">dk.napp.social</module>
+    <module platform="iphone">ti.storekit</module>
+    <module platform="iphone">com.animecyc.animator</module>
+    <module platform="iphone">com.animecyc.analytics</module>
+  </modules>
+    <plugins>
+        <plugin>ti.alloy</plugin>
+    </plugins>
+    <property name="GCM_sender_id" type="string">xxxx</property>
+    <property name="ti.android.largeHeap" type="bool">true</property>
+    <property name="ti.android.bug2373.finishfalseroot" type="bool">true</property>
+    <property name="ti.android.threadstacksize" type="int">42000</property>
+    <property name="ti.ui.defaultunit" type="string">dip</property>
+    <sdk-version>3.2.0.GA</sdk-version>
+</ti:app>

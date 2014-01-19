@@ -1,0 +1,14 @@
+"#footerView" : {
+	backgroundColor: 'grey'
+},
+"#fvActivityIndicator": {
+	width: 30,
+    height: 30
+},
+"#fvMessage": {
+    color: '#000',
+    font: {
+    	fontSize: 12, 
+   	},
+    textAlign: 'center',
+}

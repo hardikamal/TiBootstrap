@@ -1,0 +1,69 @@
+<h1>Appcelerator  clearlyinnovative.keychain</h1>
+<h2>INSTALL YOUR MODULE</h2>
+<ol>
+<li>Run <code>build.py</code> which creates your distribution</li>
+<li>cd to <code>/Library/Application Support/Titanium</code></li>
+<li>copy this zip file into the folder of your Titanium SDK</li>
+</ol>
+<h2>REGISTER YOUR MODULE</h2>
+<p>Register your module with your application by editing <code>tiapp.xml</code> and adding your module.
+Example:</p>
+<pre><code>    &lt;modules&gt;
+        &lt;module version="0.1"&gt;clearlyinnovative.keychain&lt;/module&gt;
+    &lt;/modules&gt;
+</code></pre>
+<p>When you run your project, the compiler will know automatically compile in your module
+dependencies and copy appropriate image assets into the application.</p>
+<h2>USING YOUR MODULE IN CODE</h2>
+<p>To use your module in code, you will need to require it. </p>
+<p>For example,</p>
+<pre><code>    var keychain = require('clearlyinnovative.keychain');
+
+    keychain.setForKey({
+        key: "name",
+        value: "asaunders-two",
+        serviceName: "MYAPPID"
+    },
+    function(data) {
+        Ti.API.info(JSON.stringify(data));
+    });
+
+    keychain.getForKey({
+        key: "name",
+        serviceName: "MYAPPID"
+    },
+    function(data) {
+        Ti.API.info(JSON.stringify(data));
+    });
+
+    // removeForKey
+    keychain.removeForKey({
+        key: "name",
+        serviceName: "MYAPPID"
+    },
+    function(data) {
+        Ti.API.info(JSON.stringify(data));
+    });
+
+    // SHOULD ERROR SINCE WE REMOVED KEY
+    keychain.getForKey({
+        key: "name",
+        serviceName: "MYAPPID"
+    },
+    function(data) {
+        Ti.API.info(JSON.stringify(data));
+    });
+</code></pre>
+<h2>RELEASE NOTES</h2>
+<p>Enjoy -if you have questions or issues, please post here</p>
+<p>based on code from the iPhone Developer's Cookbook</p>
+<h2>LICENSE</h2>
+<p>SFHFKeychainUtils code by:
+  Created by Buzz Andersen on 10/20/08.
+  Based partly on code by Jonathan Wight, Jon Crosby, and Mike Malone.
+  Copyright 2008 Sci-Fi Hi-Fi. All rights reserved.</p>
+<p>The MIT License</p>
+<p>Copyright (c) 2012 Aaron Saunders</p>
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+<p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>

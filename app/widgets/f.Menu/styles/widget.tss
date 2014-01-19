@@ -1,0 +1,43 @@
+"#terms": {
+	title: L('terms', 'Voorwaarden'),
+	//hasChild: true
+}
+
+"#home": {
+	title: L('home', 'Home'),
+	//hasChild: true
+}
+
+"#header": {
+	headerTitle: L('menu_header', 'Over Floor'),
+	//hasChild: true
+}
+
+"#who_is": {
+	title: L('who_is', 'Wie is Floor?'),
+	//hasChild: true
+}
+
+"#faq": {
+	title: L('faq', 'Vragen?'),
+}
+
+"#feedback": {
+	title: L('feedback', 'Feedback')
+}
+
+"#facebook": {
+	title: L('facebook', 'Volg op Facebook')
+}
+
+"#twitter": {
+	title: L('twitter', 'Volg op Twitter')
+}
+
+"#email": {
+	title: L('email', 'Mailen')
+}
+
+"#invite": {
+	title: L('invite', 'Nodig een vriendin uit')
+}

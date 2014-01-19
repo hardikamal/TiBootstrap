@@ -1,0 +1,39 @@
+/**
+ * 	Globals
+ */
+"Label": {
+	color: '#000',
+	height: Ti.UI.SIZE,
+	width: Ti.UI.SIZE,	
+},
+/**
+ * 	ListItem
+ */
+"#heading": {
+	top: 130,
+	font: {
+		fontSize: 18,
+		fontWeight: 'bold'
+	},
+},
+"#excerpt": {
+	top: 150,
+	font: {
+		fontSize: 12,
+	},	
+},
+
+"#poster": {
+	top: 0,
+	width: '100%'
+},
+
+"#imageContainer" : {
+	top: 0,
+	height:125,
+	width: '100%',
+	borderRadius: 0,
+
+}
+
+

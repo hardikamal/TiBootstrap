@@ -1,0 +1,5 @@
+<Alloy>
+	<View id="container" onClick="onClick" onTouchstart="onTouchStart" onTouchend="onTouchEnd" onTouchcancel="onTouchEnd">
+		<ImageView id="button" />
+	</View>
+</Alloy>

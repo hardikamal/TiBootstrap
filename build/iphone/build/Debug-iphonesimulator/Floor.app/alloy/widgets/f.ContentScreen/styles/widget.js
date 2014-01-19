@@ -1,0 +1,1 @@
+/Users/wienke/workspace/Floor/Resources/iphone/alloy/widgets/f.ContentScreen/styles/widget.js

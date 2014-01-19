@@ -1,0 +1,15 @@
+<Alloy>
+	<TableView onClick="onClick" id='menuTableView'>
+		<TableViewRow id="home" />
+		<TableViewSection id="header">
+			<TableViewRow id="who_is" />
+			<TableViewRow id="invite" />
+			<TableViewRow id="facebook" />
+			<TableViewRow id="twitter" />
+			<TableViewRow id="email" />
+			<TableViewRow id="faq" />
+			<TableViewRow id="feedback" />
+			<TableViewRow id="terms" />
+		</TableViewSection>
+	</TableView>
+</Alloy>

@@ -1,0 +1,28 @@
+<Alloy>
+    <View id="nav" platform="android">
+        <Menu id="menu">
+            <!-- Cannot specify node text.  Use attributes only. -->
+            <MenuItem id="Menu" itemId="1" visible="true" onClick="toggleMenu" showAsAction="Ti.Android.SHOW_AS_ACTION_ALWAYS">
+            </MenuItem>
+        </Menu>
+    </View>
+    <View id="menuDrawer" top="20" platform="android">
+        <Widget src="f.Menu">
+        </Widget>
+    </View>
+ 
+    <Window id="menuDrawer" top="20" backgroundColor="#fff" platform="ios">
+        <Widget src="f.Menu">
+        </Widget>
+    </Window>
+ 
+    <NavigationWindow id="nav" onFocus="notify" platform="ios">
+        <Window id="centerWin" >
+            <LeftNavButton>
+                <Widget src="f.MenuButton" onClick="toggleMenu" id="menu"  />
+            </LeftNavButton>
+
+            <Widget src="com.svobik.InfiniteList" id="ilist"  />
+        </Window>
+    </NavigationWindow>
+</Alloy>
