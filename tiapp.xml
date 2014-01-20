@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?><ti:app xmlns:ti="http://ti.appcelerator.org">
-	<id>nl.floor.app</id>
-	<name>Floor</name>
+	<id>nl.ti.bootstrap.app</id>
+	<name>TiBootstrap</name>
 	<version>1.0</version>
 	<publisher>WWG Holding B.V.</publisher>
-	<url>http://www.wappzapp.tv</url>
+	<url>http://www.wwgholding.nl</url>
 	<description></description>
 	<copyright>WWG Holding B.V.</copyright>
 	<icon>appicon.png</icon>
@@ -41,14 +41,15 @@
     <android xmlns:android="http://schemas.android.com/apk/res/android">
         <!-- This tells us what Android API version to compile against -->
         <manifest android:versionCode="1" android:versionName="3.0.3" >
-            <uses-sdk android:minSdkVersion="9" android:targetSdkVersion="19"/>
+            <uses-sdk android:minSdkVersion="10" android:targetSdkVersion="19"/>
             <!-- This tells the Marketplace and the system what versions of Android your app supports -->
             <application android:debuggable="false" android:hardwareAccelerated="true" android:theme="@style/Theme.Wappaction" android:launchMode="singleTask">
                 <!-- android:name needs to match the generated AndroidManifest.xml in build/android/AndroidManifest.xml -->
                 <supports-screens android:anyDensity="true"
                     android:largeScreens="true"
                     android:normalScreens="true"
-                    android:smallScreens="true" android:xlargeScreens="true"/>
+                    android:smallScreens="true" 
+                    android:xlargeScreens="true"/>
 
                     <service android:name="com.activate.gcm.GCMIntentService"/>
                     <receiver android:name="com.google.android.gcm.GCMBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
@@ -82,18 +83,18 @@
     </android>
     <modules>
     <module platform="android">facebook</module>
-    <module platform="android" version="1.1.3">dk.napp.drawer</module>
+    <module platform="android">dk.napp.drawer</module>
     <module platform="android">net.iamyellow.gcmjs</module>
     <module platform="android">com.animecyc.analytics</module>
     <module platform="android" >ti.admob</module>
 
     <module platform="iphone" >dk.napp.drawer</module>
     <module platform="iphone" >ti.admob</module>
-    <module platform="iphone" version="1.0.1">com.omorandi</module>
+    <module platform="iphone">com.omorandi</module>
     <module platform="iphone">facebook</module>
-    <module platform="iphone" version="1.2.2">dk.napp.ui</module>
-    <module platform="iphone" version="1.2.5">dk.napp.appearance</module>
-    <module platform="iphone" version="1.7.1">dk.napp.social</module>
+    <module platform="iphone">dk.napp.ui</module>
+    <module platform="iphone">dk.napp.appearance</module>
+    <module platform="iphone">dk.napp.social</module>
     <module platform="iphone">ti.storekit</module>
     <module platform="iphone">com.animecyc.animator</module>
     <module platform="iphone">com.animecyc.analytics</module>
