@@ -935,8 +935,8 @@ TI_INLINE void waitForMemoryPanicCleared();   //WARNING: This must never be run 
 		UIDevice *currentDevice = [UIDevice currentDevice];
 		NSString *currentLocaleIdentifier = [[NSLocale currentLocale] localeIdentifier];
 		NSString *currentDeviceInfo = [NSString stringWithFormat:@"%@/%@; %@; %@;",[currentDevice model],[currentDevice systemVersion],[currentDevice systemName],currentLocaleIdentifier];
-		NSString *kFloorUserAgentPrefix = [NSString stringWithFormat:@"%s%s%s %s%s","Appc","eler","ator","Tita","nium"];
-		userAgent = [[NSString stringWithFormat:@"%@/%s (%@)",kFloorUserAgentPrefix,TI_VERSION_STR,currentDeviceInfo] retain];
+		NSString *kTiBootstrapUserAgentPrefix = [NSString stringWithFormat:@"%s%s%s %s%s","Appc","eler","ator","Tita","nium"];
+		userAgent = [[NSString stringWithFormat:@"%@/%s (%@)",kTiBootstrapUserAgentPrefix,TI_VERSION_STR,currentDeviceInfo] retain];
 	}
 	return userAgent;
 }
@@ -1076,7 +1076,7 @@ TI_INLINE void waitForMemoryPanicCleared();   //WARNING: This must never be run 
             errorString = [error localizedDescription];
         } else {
             // If we have no data...
-            // This should never happen on a Floor app using the node.js CLI
+            // This should never happen on a TiBootstrap app using the node.js CLI
             errorString = @"File not found";
         }
         if(errorString != nil) {

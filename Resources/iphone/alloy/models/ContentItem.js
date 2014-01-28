@@ -1,3 +1,5 @@
+var moment = require("alloy/moment");
+
 exports.definition = {
     config: {
         columns: {
@@ -9,7 +11,9 @@ exports.definition = {
             link: "text",
             date: "text",
             format: "text",
-            featured_image: "result"
+            featured_image: "result",
+            template: "text",
+            timestamp: "integer"
         },
         URL: "http://149.210.167.95/wp-json.php/posts",
         debug: 1,
@@ -17,13 +21,22 @@ exports.definition = {
         initFetchWithLocalData: 1,
         adapter: {
             type: "sqlrest",
-            collection_name: "posts",
+            collection_name: "ContentItems",
             idAttribute: "ID"
-        },
-        deleteAllOnFetch: true
+        }
     },
     extendModel: function(Model) {
-        _.extend(Model.prototype, {});
+        _.extend(Model.prototype, {
+            comparator: function(contentitem) {
+                return moment(contentitem.get("date")).format("X");
+            },
+            initialize: function() {
+                this.set({
+                    template: this.get("format"),
+                    timestamp: moment(this.get("date")).format("X")
+                });
+            }
+        });
         return Model;
     },
     extendCollection: function(Collection) {

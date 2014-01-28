@@ -50,7 +50,7 @@
     BOOL statusBarVisibilityChanged;
 }
 
-//Floor Support
+//TiBootstrap Support
 -(CGRect)resizeView;
 -(void)repositionSubviews;
 -(UIView *)topWindowProxyView;

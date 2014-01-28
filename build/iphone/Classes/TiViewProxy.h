@@ -17,7 +17,7 @@
  */
 @protocol TiKeyboardFocusableView
 
-#pragma mark Public Floor APIs.
+#pragma mark Public TiBootstrap APIs.
 
 /**
  Tells the view to focus.

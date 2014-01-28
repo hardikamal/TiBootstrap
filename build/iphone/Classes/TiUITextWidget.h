@@ -38,7 +38,7 @@
 -(void)textWidget:(UIView<UITextInputTraits>*)tw didBlurWithText:(NSString *)value;
 -(void)setValue_:(id)text;
 -(void)setSelectionFrom:(id)start to:(id)end;
-#pragma mark - Floor Internal Use Only
+#pragma mark - TiBootstrap Internal Use Only
 -(void)updateKeyboardStatus;
 @end
 

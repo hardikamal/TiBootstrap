@@ -1,15 +1,21 @@
 <Alloy>
-	<TableView onClick="onClick" id='menuTableView'>
-		<TableViewRow id="home" />
-		<TableViewSection id="header">
-			<TableViewRow id="who_is" />
-			<TableViewRow id="invite" />
-			<TableViewRow id="facebook" />
-			<TableViewRow id="twitter" />
-			<TableViewRow id="email" />
-			<TableViewRow id="faq" />
-			<TableViewRow id="feedback" />
-			<TableViewRow id="terms" />
-		</TableViewSection>
-	</TableView>
+	<Collection src="MenuItem"/>
+    <!-- DynamicList widget -->
+    <Widget src="com.svobik7.DynamicList" id="dlist"/>
+
+    <!-- ListView -->
+    <ListView id="menuList" defaultItemTemplate="menuDefault" onInit="doInit" onItemclick="doItemClick">
+            <!-- ListView item templates -->
+            <Templates>
+                    <ItemTemplate name="menuDefault" height="60">
+                            <Label bindId="title" class="title" />
+                    </ItemTemplate>
+            </Templates>
+            
+            <!-- ListView section -->
+            <ListSection id="menuListSection" dataCollection="MenuItem">
+                    <ListItem template="menuDefault" title:text="{title}" />
+            </ListSection>
+    </ListView>
+
 </Alloy>

@@ -88,13 +88,13 @@ function Controller() {
     arguments[0] ? arguments[0]["__itemTemplate"] : null;
     var $ = this;
     var exports = {};
-    var __alloyId1 = {};
-    var __alloyId4 = [];
-    var __alloyId5 = {
+    var __alloyId15 = {};
+    var __alloyId18 = [];
+    var __alloyId19 = {
         type: "Ti.UI.View",
         childTemplates: function() {
-            var __alloyId6 = [];
-            var __alloyId7 = {
+            var __alloyId20 = [];
+            var __alloyId21 = {
                 type: "Ti.UI.ImageView",
                 bindId: "poster",
                 properties: {
@@ -103,8 +103,8 @@ function Controller() {
                     bindId: "poster"
                 }
             };
-            __alloyId6.push(__alloyId7);
-            return __alloyId6;
+            __alloyId20.push(__alloyId21);
+            return __alloyId20;
         }(),
         properties: {
             top: 0,
@@ -113,8 +113,8 @@ function Controller() {
             borderRadius: 0
         }
     };
-    __alloyId4.push(__alloyId5);
-    var __alloyId8 = {
+    __alloyId18.push(__alloyId19);
+    var __alloyId22 = {
         type: "Ti.UI.Label",
         bindId: "heading",
         properties: {
@@ -129,8 +129,8 @@ function Controller() {
             bindId: "heading"
         }
     };
-    __alloyId4.push(__alloyId8);
-    var __alloyId9 = {
+    __alloyId18.push(__alloyId22);
+    var __alloyId23 = {
         type: "Ti.UI.Label",
         bindId: "excerpt",
         properties: {
@@ -144,23 +144,23 @@ function Controller() {
             bindId: "excerpt"
         }
     };
-    __alloyId4.push(__alloyId9);
-    var __alloyId3 = {
+    __alloyId18.push(__alloyId23);
+    var __alloyId17 = {
         properties: {
             name: "defaultTemplate",
             height: "200"
         },
-        childTemplates: __alloyId4
+        childTemplates: __alloyId18
     };
-    __alloyId1["defaultTemplate"] = __alloyId3;
+    __alloyId15["defaultTemplate"] = __alloyId17;
     $.__views.listSection = Ti.UI.createListSection({
         id: "listSection"
     });
-    var __alloyId11 = [];
-    __alloyId11.push($.__views.listSection);
+    var __alloyId25 = [];
+    __alloyId25.push($.__views.listSection);
     $.__views.listView = Ti.UI.createListView({
-        sections: __alloyId11,
-        templates: __alloyId1,
+        sections: __alloyId25,
+        templates: __alloyId15,
         pullView: void 0,
         footerView: void 0,
         id: "listView",

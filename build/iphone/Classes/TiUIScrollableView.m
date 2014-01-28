@@ -153,10 +153,6 @@
 
 -(void)renderViewForIndex:(int)index
 {
-    
-    DebugLog(@"[WARN] Starting renderViewForIndex index = %d", index);
-
-    
 	UIScrollView *sv = [self scrollview];
 	NSArray * svSubviews = [sv subviews];
 	int svSubviewsCount = [svSubviews count];
@@ -169,10 +165,8 @@
 	UIView *wrapper = [svSubviews objectAtIndex:index];
 	TiViewProxy *viewproxy = [[self proxy] viewAtIndex:index];
     if (![viewproxy viewAttached]) {
-
         if ([[viewproxy view] superview] != wrapper) {
             [wrapper addSubview:[viewproxy view]];
-            DebugLog(@"[WARN] In manageCache add subview");
         }
         [viewproxy windowWillOpen];
         [viewproxy windowDidOpen];
@@ -180,9 +174,6 @@
     } else if (!CGRectEqualToRect([viewproxy sandboxBounds], [wrapper bounds])) {
         [viewproxy parentSizeWillChange];
     }
-    
-    DebugLog(@"[WARN] Ended renderViewForIndex index = %d", index);
-
 }
 
 -(NSRange)cachedFrames:(int)page
@@ -220,17 +211,11 @@
 
 -(void)manageCache:(int)page
 {
-    
-    DebugLog(@"[WARN] Started manageCache");
-
     if ([(TiUIScrollableViewProxy *)[self proxy] viewCount] == 0) {
         return;
     }
     
     NSRange renderRange = [self cachedFrames:page];
-    
-    DebugLog(@"[WARN] NSRange size = %d", renderRange.length);
-
 	int viewsCount = [[self proxy] viewCount];
 
     for (int i=0; i < viewsCount; i++) {
@@ -245,9 +230,6 @@
             }
         }
     }
-    
-    DebugLog(@"[WARN] Ended manageCache");
-
 }
 
 -(void)listenerAdded:(NSString*)event count:(int)count
@@ -280,8 +262,6 @@
 
 -(void)refreshScrollView:(CGRect)visibleBounds readd:(BOOL)readd
 {
-    DebugLog(@"[WARN] Started refreshScrollView index");
-
 	CGRect viewBounds;
 	viewBounds.size.width = visibleBounds.size.width;
 	viewBounds.size.height = visibleBounds.size.height - (showPageControl ? pageControlHeight : 0);
@@ -349,9 +329,6 @@
 	
 	[sv setContentSize:contentBounds];
 	[sv setFrame:CGRectMake(0, 0, visibleBounds.size.width, visibleBounds.size.height)];
-    
-    DebugLog(@"[WARN] Ended refreshScrollView index");
-
 }
 
 // We have to cache the current page because we need to scroll to the new (logical) position of the view
@@ -533,7 +510,7 @@
 
 -(void)addView:(id)viewproxy
 {
-	//[self refreshScrollView:[self bounds] readd:YES];
+	[self refreshScrollView:[self bounds] readd:YES];
 }
 
 -(void)removeView:(id)args

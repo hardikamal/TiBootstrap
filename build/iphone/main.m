@@ -8,10 +8,10 @@
 #define STRING(x) _QUOTEME(x)
 
 NSString * const TI_APPLICATION_DEPLOYTYPE = @"development";
-NSString * const TI_APPLICATION_ID = @"nl.floor.app";
+NSString * const TI_APPLICATION_ID = @"nl.ti.bootstrap.app";
 NSString * const TI_APPLICATION_PUBLISHER = @"WWG Holding B.V.";
-NSString * const TI_APPLICATION_URL = @"http://www.wappzapp.tv";
-NSString * const TI_APPLICATION_NAME = @"Floor";
+NSString * const TI_APPLICATION_URL = @"http://www.wwgholding.nl";
+NSString * const TI_APPLICATION_NAME = @"TiBootstrap";
 NSString * const TI_APPLICATION_VERSION = @"1.0";
 NSString * const TI_APPLICATION_DESCRIPTION = @"";
 NSString * const TI_APPLICATION_COPYRIGHT = @"WWG Holding B.V.";

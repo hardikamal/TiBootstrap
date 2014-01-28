@@ -1,8 +1,7 @@
 function Controller() {
     function toggleMenu() {
-        drawer.toggleLeftWindow();
+        $.drawer.toggleLeftWindow();
     }
-    function notify() {}
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     this.__controllerPath = "main";
     var __parentSymbol = arguments[0] ? arguments[0]["__parentSymbol"] : null;
@@ -11,61 +10,51 @@ function Controller() {
     var $ = this;
     var exports = {};
     var __defers = {};
-    $.__views.menuDrawer = Ti.UI.createWindow({
-        id: "menuDrawer",
-        top: "20",
-        backgroundColor: "#fff"
+    $.__views.__alloyId26 = Ti.UI.createWindow({
+        title: "Main List",
+        width: 1400,
+        role: "leftWindow",
+        id: "__alloyId26"
     });
-    $.__views.menuDrawer && $.addTopLevelView($.__views.menuDrawer);
-    $.__views.__alloyId13 = Alloy.createWidget("f.Menu", "widget", {
-        id: "__alloyId13",
-        __parentSymbol: $.__views.menuDrawer
+    $.__views.__alloyId27 = Alloy.createWidget("f.Menu", "widget", {
+        id: "__alloyId27",
+        __parentSymbol: $.__views.__alloyId26
     });
-    $.__views.__alloyId13.setParent($.__views.menuDrawer);
-    $.__views.centerWin = Ti.UI.createWindow({
-        id: "centerWin"
+    $.__views.__alloyId27.setParent($.__views.__alloyId26);
+    $.__views.__alloyId29 = Ti.UI.createWindow({
+        title: "Main List",
+        width: 1400,
+        id: "__alloyId29"
     });
     $.__views.menu = Alloy.createWidget("f.MenuButton", "widget", {
         id: "menu",
         __parentSymbol: __parentSymbol
     });
     toggleMenu ? $.__views.menu.on("click", toggleMenu) : __defers["$.__views.menu!click!toggleMenu"] = true;
-    $.__views.centerWin.leftNavButton = $.__views.menu.getViewEx({
+    $.__views.__alloyId29.leftNavButton = $.__views.menu.getViewEx({
         recurse: true
     });
-    $.__views.ilist = Alloy.createWidget("com.svobik.InfiniteList", "widget", {
-        id: "ilist",
-        __parentSymbol: $.__views.centerWin
+    $.__views.Stream = Alloy.createController("stream", {
+        id: "Stream",
+        __parentSymbol: $.__views.__alloyId29
     });
-    $.__views.ilist.setParent($.__views.centerWin);
-    $.__views.nav = Ti.UI.iOS.createNavigationWindow({
-        window: $.__views.centerWin,
-        id: "nav"
+    $.__views.Stream.setParent($.__views.__alloyId29);
+    $.__views.__alloyId28 = Ti.UI.iOS.createNavigationWindow({
+        window: $.__views.__alloyId29,
+        role: "centerWindow",
+        id: "__alloyId28"
     });
-    $.__views.nav && $.addTopLevelView($.__views.nav);
-    notify ? $.__views.nav.addEventListener("focus", notify) : __defers["$.__views.nav!focus!notify"] = true;
+    $.__views.drawer = Alloy.createWidget("nl.fokkezb.drawer", "widget", {
+        id: "drawer",
+        children: [ $.__views.__alloyId26, $.__views.__alloyId28 ],
+        __parentSymbol: __parentSymbol
+    });
+    $.__views.drawer && $.addTopLevelView($.__views.drawer);
     exports.destroy = function() {};
     _.extend($, $.__views);
+    $.drawer.open();
     arguments[0] || {};
-    var NappDrawerModule = require("dk.napp.drawer");
-    var drawer = NappDrawerModule.createDrawer({
-        leftWindow: $.menuDrawer,
-        centerWindow: $.nav,
-        closeDrawerGestureMode: NappDrawerModule.CLOSE_MODE_ALL,
-        openDrawerGestureMode: NappDrawerModule.OPEN_MODE_ALL,
-        leftDrawerWidth: 260,
-        fading: .2,
-        parallaxAmount: .5,
-        shadowWidth: "40dp"
-    });
-    var drawer;
-    Ti.App.addEventListener("App:closeMenuDrawer", function() {
-        drawer.toggleLeftWindow();
-    });
-    drawer.open();
-    $.ilist.init();
     __defers["$.__views.menu!click!toggleMenu"] && $.__views.menu.on("click", toggleMenu);
-    __defers["$.__views.nav!focus!notify"] && $.__views.nav.addEventListener("focus", notify);
     _.extend($, exports);
 }
 

@@ -60,7 +60,7 @@ extern "C" {
 	#define KMETHOD_DEBUG MEMORY_DEBUG
 #endif
 
-// in simulator we redefine to format for Floor Developer console
+// in simulator we redefine to format for TiBootstrap Developer console
 
 
 #define TI_INLINE static __inline__
@@ -309,13 +309,13 @@ void TiExceptionThrowWithNameAndReason(NSString *exceptionName, NSString *reason
 #define DEFINE_EXCEPTIONS \
 - (void) throwException:(NSString *) reason subreason:(NSString*)subreason location:(NSString *)location\
 {\
-	NSString * exceptionName = [@"org.floor." stringByAppendingString:NSStringFromClass([self class])];\
+	NSString * exceptionName = [@"org.tibootstrap." stringByAppendingString:NSStringFromClass([self class])];\
 	TiExceptionThrowWithNameAndReason(exceptionName,reason,subreason,location);\
 }\
 \
 + (void) throwException:(NSString *) reason subreason:(NSString*)subreason location:(NSString *)location\
 {\
-	NSString * exceptionName = @"org.floor";\
+	NSString * exceptionName = @"org.tibootstrap";\
 	TiExceptionThrowWithNameAndReason(exceptionName,reason,subreason,location);\
 }\
 
@@ -415,28 +415,28 @@ DebugLog(@"[WARN] Ti%@.%@ DEPRECATED in %@, in favor of %@.",@"tanium",api,in,ne
 
  //MUST BE NEGATIVE, as it inhabits the same space as UIBarButtonSystemItem
 enum {
-	UIFloorNativeItemNone = -1, 
-	UIFloorNativeItemSpinner = -2,
-	UIFloorNativeItemProgressBar = -3,
+	UITiBootstrapNativeItemNone = -1, 
+	UITiBootstrapNativeItemSpinner = -2,
+	UITiBootstrapNativeItemProgressBar = -3,
 	
-	UIFloorNativeItemSlider = -4,
-	UIFloorNativeItemSwitch = -5,
-	UIFloorNativeItemMultiButton = -6,
-	UIFloorNativeItemSegmented = -7,
+	UITiBootstrapNativeItemSlider = -4,
+	UITiBootstrapNativeItemSwitch = -5,
+	UITiBootstrapNativeItemMultiButton = -6,
+	UITiBootstrapNativeItemSegmented = -7,
 	
-	UIFloorNativeItemTextView = -8,
-	UIFloorNativeItemTextField = -9,
-	UIFloorNativeItemSearchBar = -10,
+	UITiBootstrapNativeItemTextView = -8,
+	UITiBootstrapNativeItemTextField = -9,
+	UITiBootstrapNativeItemSearchBar = -10,
 	
-	UIFloorNativeItemPicker = -11,
-	UIFloorNativeItemDatePicker = -12,
+	UITiBootstrapNativeItemPicker = -11,
+	UITiBootstrapNativeItemDatePicker = -12,
 	
-	UIFloorNativeItemInfoLight = -13,
-	UIFloorNativeItemInfoDark = -14,
+	UITiBootstrapNativeItemInfoLight = -13,
+	UITiBootstrapNativeItemInfoDark = -14,
 	
-	UIFloorNativeItemDisclosure = -15,
+	UITiBootstrapNativeItemDisclosure = -15,
 	
-	UIFloorNativeItemContactAdd = -16
+	UITiBootstrapNativeItemContactAdd = -16
 };
 
 
@@ -614,7 +614,7 @@ void incrementKrollCounter();
 void decrementKrollCounter();
     
 /**
- *	TiThreadPerformOnMainThread should replace all Floor instances of
+ *	TiThreadPerformOnMainThread should replace all TiBootstrap instances of
  *	performSelectorOnMainThread, ESPECIALLY if wait is to be yes. That way,
  *	exceptional-case main thread activities can process them outside of the
  *	standard event loop.

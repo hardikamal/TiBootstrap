@@ -6,14 +6,14 @@ function WPATH(s) {
 
 module.exports = [ {
     isId: true,
-    priority: 100100.002,
+    priority: 100100.001,
     key: "footerView",
     style: {
         backgroundColor: "grey"
     }
 }, {
     isId: true,
-    priority: 100100.0021,
+    priority: 100100.0011,
     key: "fvActivityIndicator",
     style: {
         width: 30,
@@ -21,7 +21,7 @@ module.exports = [ {
     }
 }, {
     isId: true,
-    priority: 100100.0022,
+    priority: 100100.0012,
     key: "fvMessage",
     style: {
         color: "#000",

@@ -39,12 +39,12 @@ MAKE_SYSTEM_PROP(DONE,UIBarButtonSystemItemDone);
 MAKE_SYSTEM_PROP(FLEXIBLE_SPACE,UIBarButtonSystemItemFlexibleSpace);
 MAKE_SYSTEM_PROP(FIXED_SPACE,UIBarButtonSystemItemFixedSpace);
 
-MAKE_SYSTEM_PROP(ACTIVITY,UIFloorNativeItemSpinner);
-MAKE_SYSTEM_PROP(SPINNER,UIFloorNativeItemSpinner);
-MAKE_SYSTEM_PROP(INFO_LIGHT,UIFloorNativeItemInfoLight);
-MAKE_SYSTEM_PROP(INFO_DARK,UIFloorNativeItemInfoDark);
-MAKE_SYSTEM_PROP(DISCLOSURE,UIFloorNativeItemDisclosure);
-MAKE_SYSTEM_PROP(CONTACT_ADD,UIFloorNativeItemContactAdd);
+MAKE_SYSTEM_PROP(ACTIVITY,UITiBootstrapNativeItemSpinner);
+MAKE_SYSTEM_PROP(SPINNER,UITiBootstrapNativeItemSpinner);
+MAKE_SYSTEM_PROP(INFO_LIGHT,UITiBootstrapNativeItemInfoLight);
+MAKE_SYSTEM_PROP(INFO_DARK,UITiBootstrapNativeItemInfoDark);
+MAKE_SYSTEM_PROP(DISCLOSURE,UITiBootstrapNativeItemDisclosure);
+MAKE_SYSTEM_PROP(CONTACT_ADD,UITiBootstrapNativeItemContactAdd);
 
 
 @end

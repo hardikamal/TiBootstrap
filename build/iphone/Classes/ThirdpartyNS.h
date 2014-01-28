@@ -7,8 +7,8 @@
  * WARNING: This is generated code. Modify at your own risk and without support.
  */
 
-#ifndef Floor_ThirdpartyNS_h
-#define Floor_ThirdpartyNS_h
+#ifndef TiBootstrap_ThirdpartyNS_h
+#define TiBootstrap_ThirdpartyNS_h
 
 #ifndef __TI_NAMESPACE_PREFIX_
 #define __TI_NAMESPACE_PREFIX_	TI

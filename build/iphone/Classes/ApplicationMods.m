@@ -77,7 +77,7 @@
 			@"name",
 			@"dk.napp.ui",
 			@"moduleid",
-			@"1.2.2",
+			@"1.2.5",
 			@"version",
 			@"350a6144-b15b-4741-b4df-067d318e6b91",
 			@"guid",

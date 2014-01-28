@@ -43,7 +43,7 @@
         <manifest android:versionCode="1" android:versionName="3.0.3" >
             <uses-sdk android:minSdkVersion="10" android:targetSdkVersion="19"/>
             <!-- This tells the Marketplace and the system what versions of Android your app supports -->
-            <application android:debuggable="false" android:hardwareAccelerated="true" android:theme="@style/Theme.Wappaction" android:launchMode="singleTask">
+            <application android:debuggable="false" android:hardwareAccelerated="true" android:launchMode="singleTask">
                 <!-- android:name needs to match the generated AndroidManifest.xml in build/android/AndroidManifest.xml -->
                 <supports-screens android:anyDensity="true"
                     android:largeScreens="true"
@@ -86,10 +86,9 @@
     <module platform="android">dk.napp.drawer</module>
     <module platform="android">net.iamyellow.gcmjs</module>
     <module platform="android">com.animecyc.analytics</module>
-    <module platform="android" >ti.admob</module>
-
-    <module platform="iphone" >dk.napp.drawer</module>
-    <module platform="iphone" >ti.admob</module>
+    <module platform="android">ti.admob</module>
+    <module platform="iphone">dk.napp.drawer</module>
+    <module platform="iphone">ti.admob</module>
     <module platform="iphone">com.omorandi</module>
     <module platform="iphone">facebook</module>
     <module platform="iphone">dk.napp.ui</module>

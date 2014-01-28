@@ -1,7 +1,7 @@
-
-".container" : {
-  
-}
-
-"#centerWin" : {
+"Window": {
+        title: 'Main List',
+        width: 1400,
+},
+".container": {
+        backgroundColor:"white"
 }

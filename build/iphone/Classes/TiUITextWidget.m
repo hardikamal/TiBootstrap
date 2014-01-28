@@ -243,7 +243,7 @@
     }
 }
 
-#pragma mark - Floor Internal Use Only
+#pragma mark - TiBootstrap Internal Use Only
 -(void)updateKeyboardStatus
 {
     if ( ([[[TiApp app] controller] keyboardVisible]) && ([[[TiApp app] controller] keyboardFocusedProxy] == [self proxy]) ) {

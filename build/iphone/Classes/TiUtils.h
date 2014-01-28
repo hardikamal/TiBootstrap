@@ -39,7 +39,7 @@ typedef enum {
 } EncodingError;
 
 /**
- Floor orientation flags.
+ TiBootstrap orientation flags.
  */
 typedef enum
 {

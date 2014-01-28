@@ -6,7 +6,7 @@ function WPATH(s) {
 
 module.exports = [ {
     isApi: true,
-    priority: 1000.0015,
+    priority: 1000.0005,
     key: "Label",
     style: {
         color: "#000",
@@ -15,7 +15,7 @@ module.exports = [ {
     }
 }, {
     isId: true,
-    priority: 100000.0016,
+    priority: 100000.0006,
     key: "heading",
     style: {
         top: 130,
@@ -26,7 +26,7 @@ module.exports = [ {
     }
 }, {
     isId: true,
-    priority: 100000.0017,
+    priority: 100000.0007,
     key: "excerpt",
     style: {
         top: 150,
@@ -36,7 +36,7 @@ module.exports = [ {
     }
 }, {
     isId: true,
-    priority: 100000.0018,
+    priority: 100000.0008,
     key: "poster",
     style: {
         top: 0,
@@ -44,7 +44,7 @@ module.exports = [ {
     }
 }, {
     isId: true,
-    priority: 100000.0019,
+    priority: 100000.0009,
     key: "imageContainer",
     style: {
         top: 0,

@@ -1,3 +1,5 @@
+var moment = require('alloy/moment');
+
 exports.definition = {
 	config: {
 		columns: {
@@ -10,6 +12,8 @@ exports.definition = {
 			"date": "text",
 			"format": "text",
 			"featured_image": "result",
+			"template" : "text",
+			"timestamp" : "integer"
 		},
 
 		//"parentNode": "featured_image"
@@ -20,7 +24,7 @@ exports.definition = {
         "initFetchWithLocalData": 1,
         "adapter" : {
             "type" : "sqlrest",
-            "collection_name" : "posts",
+            "collection_name" : "ContentItems",
             "idAttribute" : "ID",
 
             // optimise the amount of data transfer from remote server to app
@@ -35,11 +39,20 @@ exports.definition = {
         // },
 
         // delete all models on fetch
-        "deleteAllOnFetch": true
+        //"deleteAllOnFetch": true
 	},
 	extendModel: function(Model) {
 		_.extend(Model.prototype, {
-			// extended functions and properties go here
+            // Implement the comparator method.
+    	    comparator : function(contentitem) {
+        	    return moment(contentitem.get('date')).format('X');
+        	},
+        	initialize: function () {
+				this.set({
+					template : this.get('format'),
+					timestamp : moment(this.get('date')).format('X')
+				});
+        	}
 		});
 
 		return Model;

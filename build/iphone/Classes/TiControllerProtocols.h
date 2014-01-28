@@ -52,7 +52,7 @@
 @end
 
 /**
- Protocol for containment controller. Implemented by UIViewControllers that can host Floor Windows
+ Protocol for containment controller. Implemented by UIViewControllers that can host TiBootstrap Windows
  */
 @protocol TiControllerContainment <NSObject>
 @required

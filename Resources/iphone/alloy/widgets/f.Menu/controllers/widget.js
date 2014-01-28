@@ -5,137 +5,90 @@ function WPATH(s) {
 }
 
 function Controller() {
-    function onClick(evt) {
-        switch (evt.source.id) {
-          case "restorePurchases":
-            break;
-
-          case "logout":
-            break;
-
-          case "feedback":
-            var emailDialog = Titanium.UI.createEmailDialog();
-            emailDialog.subject = "Feedback";
-            emailDialog.toRecipients = [ "wienke@wappzapp.tv", "colin@wappzapp.tv" ];
-            emailDialog.messageBody = "\n\r\n\r\n\r --- \n\rVersion: " + Ti.App.getVersion() + "\n\r" + "Phone model: " + Ti.Platform.model + "\n\r" + "OS: " + Ti.Platform.osname + " " + Ti.Platform.version + "\n\r";
-            emailDialog.open();
-            break;
-
-          case "rate":
-            break;
-
-          case "faq":
-            webviewUrl = "http://www.wappzapp.tv/app_pages/faq.html";
-            break;
-
-          case "tos":
-            webviewUrl = "http://www.wappzapp.tv/app_pages/ipad/privacy.html";
-            break;
-
-          case "clearRecentlyWatched":
-            C.getRecentlyWatched().reset();
-            Alloy.createWidget("wz.Alert", {
-                message: L("clear_watched_confirm")
-            });
-            break;
-
-          case "send_a_tip":
-            emailDialog = Titanium.UI.createEmailDialog();
-            emailDialog.html = true;
-            emailDialog.toRecipients = [ "tips@wappzapp.tv" ];
-            emailDialog.subject = L("send_a_tip_subject");
-            emailDialog.messageBody = "";
-            emailDialog.open();
-            break;
-
-          case "email":
-            webviewUrl = "http://www.wappzapp.tv/app_pages/newsletter.html";
-            break;
-
-          case "facebook":
-            webviewUrl = "https://www.facebook.com/wappzapp";
-            break;
-
-          case "twitter":
-            webviewUrl = "http://www.twitter.com/wappzapptv";
+    function __alloyId13(e) {
+        if (e && e.fromAdapter) return;
+        var opts = __alloyId13.opts || {};
+        var models = __alloyId12.models;
+        var len = models.length;
+        var __alloyId8 = [];
+        for (var i = 0; len > i; i++) {
+            var __alloyId9 = models[i];
+            __alloyId9.__transform = {};
+            var __alloyId11 = {
+                template: "menuDefault",
+                title: {
+                    text: "undefined" != typeof __alloyId9.__transform["title"] ? __alloyId9.__transform["title"] : __alloyId9.get("title")
+                }
+            };
+            __alloyId8.push(__alloyId11);
         }
-        webviewUrl && Alloy.createWidget("wz.FullscreenWebView", {
-            url: webviewUrl,
-            title: "",
-            cancelTitle: "",
-            doneTitle: "Close"
-        });
+        opts.animation ? $.__views.menuListSection.setItems(__alloyId8, opts.animation) : $.__views.menuListSection.setItems(__alloyId8);
     }
-    new (require("alloy/widget"))("f.Menu");
+    function doInit(e) {
+        MenuItems.fetch(e);
+    }
+    function doItemClick(evt) {
+        Ti.Platform.openURL(MenuItems.models[evt.itemIndex].get("content"));
+    }
+    var Widget = new (require("alloy/widget"))("f.Menu");
     this.__widgetId = "f.Menu";
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     this.__controllerPath = "widget";
-    arguments[0] ? arguments[0]["__parentSymbol"] : null;
+    var __parentSymbol = arguments[0] ? arguments[0]["__parentSymbol"] : null;
     arguments[0] ? arguments[0]["$model"] : null;
     arguments[0] ? arguments[0]["__itemTemplate"] : null;
     var $ = this;
     var exports = {};
     var __defers = {};
-    var __alloyId0 = [];
-    $.__views.home = Ti.UI.createTableViewRow({
-        title: L("home", "Home"),
-        id: "home"
+    Widget.Collections.instance("MenuItem");
+    $.__views.dlist = Alloy.createWidget("com.svobik7.DynamicList", "widget", {
+        id: "dlist",
+        __parentSymbol: __parentSymbol
     });
-    __alloyId0.push($.__views.home);
-    $.__views.header = Ti.UI.createTableViewSection({
-        headerTitle: L("menu_header", "Over Floor"),
-        id: "header"
+    $.__views.dlist && $.addTopLevelView($.__views.dlist);
+    var __alloyId2 = {};
+    var __alloyId5 = [];
+    var __alloyId7 = {
+        type: "Ti.UI.Label",
+        bindId: "title",
+        properties: {
+            bindId: "title"
+        }
+    };
+    __alloyId5.push(__alloyId7);
+    var __alloyId4 = {
+        properties: {
+            name: "menuDefault",
+            height: "60"
+        },
+        childTemplates: __alloyId5
+    };
+    __alloyId2["menuDefault"] = __alloyId4;
+    $.__views.menuListSection = Ti.UI.createListSection({
+        id: "menuListSection"
     });
-    __alloyId0.push($.__views.header);
-    $.__views.who_is = Ti.UI.createTableViewRow({
-        title: L("who_is", "Wie is Floor?"),
-        id: "who_is"
+    var __alloyId12 = Widget.Collections["MenuItem"] || MenuItem;
+    __alloyId12.on("fetch destroy change add remove reset", __alloyId13);
+    var __alloyId14 = [];
+    __alloyId14.push($.__views.menuListSection);
+    $.__views.menuList = Ti.UI.createListView({
+        sections: __alloyId14,
+        templates: __alloyId2,
+        id: "menuList",
+        defaultItemTemplate: "menuDefault"
     });
-    $.__views.header.add($.__views.who_is);
-    $.__views.invite = Ti.UI.createTableViewRow({
-        title: L("invite", "Nodig een vriendin uit"),
-        id: "invite"
-    });
-    $.__views.header.add($.__views.invite);
-    $.__views.facebook = Ti.UI.createTableViewRow({
-        title: L("facebook", "Volg op Facebook"),
-        id: "facebook"
-    });
-    $.__views.header.add($.__views.facebook);
-    $.__views.twitter = Ti.UI.createTableViewRow({
-        title: L("twitter", "Volg op Twitter"),
-        id: "twitter"
-    });
-    $.__views.header.add($.__views.twitter);
-    $.__views.email = Ti.UI.createTableViewRow({
-        title: L("email", "Mailen"),
-        id: "email"
-    });
-    $.__views.header.add($.__views.email);
-    $.__views.faq = Ti.UI.createTableViewRow({
-        title: L("faq", "Vragen?"),
-        id: "faq"
-    });
-    $.__views.header.add($.__views.faq);
-    $.__views.feedback = Ti.UI.createTableViewRow({
-        title: L("feedback", "Feedback"),
-        id: "feedback"
-    });
-    $.__views.header.add($.__views.feedback);
-    $.__views.terms = Ti.UI.createTableViewRow({
-        title: L("terms", "Voorwaarden"),
-        id: "terms"
-    });
-    $.__views.header.add($.__views.terms);
-    $.__views.menuTableView = Ti.UI.createTableView({
-        data: __alloyId0,
-        id: "menuTableView"
-    });
-    $.__views.menuTableView && $.addTopLevelView($.__views.menuTableView);
-    onClick ? $.__views.menuTableView.addEventListener("click", onClick) : __defers["$.__views.menuTableView!click!onClick"] = true;
-    exports.destroy = function() {};
+    $.__views.menuList && $.addTopLevelView($.__views.menuList);
+    doInit ? $.__views.menuList.addEventListener("init", doInit) : __defers["$.__views.menuList!init!doInit"] = true;
+    doItemClick ? $.__views.menuList.addEventListener("itemclick", doItemClick) : __defers["$.__views.menuList!itemclick!doItemClick"] = true;
+    exports.destroy = function() {
+        __alloyId12.off("fetch destroy change add remove reset", __alloyId13);
+    };
     _.extend($, $.__views);
-    __defers["$.__views.menuTableView!click!onClick"] && $.__views.menuTableView.addEventListener("click", onClick);
+    arguments[0] || {};
+    var MenuItems = Widget.Collections.MenuItem;
+    $.dlist.init($.menuList);
+    __defers["$.__views.menuList!init!doInit"] && $.__views.menuList.addEventListener("init", doInit);
+    __defers["$.__views.menuList!itemclick!doItemClick"] && $.__views.menuList.addEventListener("itemclick", doItemClick);
     _.extend($, exports);
 }
 

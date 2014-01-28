@@ -9,9 +9,9 @@
 
 
 // A good bit of this code was derived from the Three20 project
-// and was customized to work inside Floor
+// and was customized to work inside TiBootstrap
 //
-// All modifications by Floor are licensed under 
+// All modifications by TiBootstrap are licensed under 
 // the Apache License, Version 2.0
 //
 //

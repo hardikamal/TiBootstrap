@@ -1,6 +1,6 @@
 TI_VERSION=3.2.0.GA
 TI_SDK_DIR=/Users/wienke/Library/Application Support/Titanium/mobilesdk/osx/$(TI_VERSION)/iphone
-TI_APPID=nl.floor.app
+TI_APPID=nl.ti.bootstrap.app
 OTHER_LDFLAGS[sdk=iphoneos*]=$(inherited) -weak_framework iAd
 OTHER_LDFLAGS[sdk=iphonesimulator*]=$(inherited) -weak_framework iAd
 #include "module"

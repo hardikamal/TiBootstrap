@@ -1,0 +1,24 @@
+<Alloy>
+	<Collection src="ContentItem" />
+        <!-- DynamicList widget -->
+    <Widget src="com.svobik7.DynamicList" id="dlist" hasLoadMore="1" hasRefresh="1" />
+
+    <!-- ListView -->
+    <ListView id="contentList" defaultItemTemplate="contentDefault" dataFilter="doFilter" onInit="doInit" onRefresh="doRefresh" onNext="doNext" onItemclick="doItemClick">
+
+            <!-- ListView item templates -->
+            <Templates>
+                    <ItemTemplate name="contentDefault" height="60">
+                            <Label bindId="title" class="title" />
+                            <Label bindId="subtitle" class="subtitle" />
+                    </ItemTemplate>
+            </Templates>
+
+            <!-- ListView section -->
+            <ListSection id="contentListSection" dataCollection="ContentItem">
+                    <ListItem template="contentDefault" title:text="{title}" subtitle:text="{content}" />
+            </ListSection>
+
+    </ListView>
+
+</Alloy>

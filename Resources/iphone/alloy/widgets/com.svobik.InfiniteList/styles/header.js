@@ -6,14 +6,14 @@ function WPATH(s) {
 
 module.exports = [ {
     isId: true,
-    priority: 100100.0023,
+    priority: 100100.0013,
     key: "headerView",
     style: {
         backgroundColor: "grey"
     }
 }, {
     isId: true,
-    priority: 100100.0024,
+    priority: 100100.0014,
     key: "hvActivityIndicator",
     style: {
         left: 35,
@@ -23,7 +23,7 @@ module.exports = [ {
     }
 }, {
     isId: true,
-    priority: 100100.0025,
+    priority: 100100.0015,
     key: "hvImage",
     style: {
         left: 35,
@@ -34,7 +34,7 @@ module.exports = [ {
     }
 }, {
     isId: true,
-    priority: 100100.0026,
+    priority: 100100.0016,
     key: "hvMessage",
     style: {
         color: "#fff",
@@ -47,7 +47,7 @@ module.exports = [ {
     }
 }, {
     isId: true,
-    priority: 100100.0027,
+    priority: 100100.0017,
     key: "hvTimestamp",
     style: {
         color: "#fff",

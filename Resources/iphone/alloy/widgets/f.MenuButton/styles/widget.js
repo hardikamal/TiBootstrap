@@ -6,7 +6,7 @@ function WPATH(s) {
 
 module.exports = [ {
     isId: true,
-    priority: 100000.0028,
+    priority: 100000.0018,
     key: "container",
     style: {
         width: Ti.UI.SIZE,
@@ -14,7 +14,7 @@ module.exports = [ {
     }
 }, {
     isId: true,
-    priority: 100000.0031,
+    priority: 100000.0021,
     key: "badge",
     style: {
         text: " ",
@@ -36,7 +36,7 @@ module.exports = [ {
     }
 }, {
     isId: true,
-    priority: 100101.0029,
+    priority: 100101.0019,
     key: "button",
     style: {
         width: 20,

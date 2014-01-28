@@ -1,0 +1,20 @@
+"#footerView": {
+	backgroundColor: 'transparent'
+},
+"#fvActivityIndicator": {
+	width: 30,
+    height: 30
+},
+"#fvActivityIndicator[platform=ios]": {
+	style: Ti.UI.iPhone.ActivityIndicatorStyle.DARK,
+}
+"#fvActivityIndicator[platform=android]": {
+	style: Ti.UI.ActivityIndicatorStyle.DARK,
+}
+"#fvMessage": {
+    color: '#000',
+    font: {
+    	fontSize: 12, 
+   	},
+    textAlign: 'center',
+}
